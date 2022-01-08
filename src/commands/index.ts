@@ -1,0 +1,1 @@
+export * from "./dart-new-class.command";
