@@ -2,12 +2,13 @@
 // Import the module and reference it with the alias vscode in your code below
 import * as vscode from "vscode";
 import { newDartClass } from "./commands";
+import { newDartEnum } from "./commands/dart-new-enum.command";
 
 // this method is called when your extension is activated
 // your extension is activated the very first time the command is executed
 export function activate(context: vscode.ExtensionContext) {
-	
 	context.subscriptions.push(vscode.commands.registerCommand("dart-flutter-utils.dartNewClass", newDartClass));
+	context.subscriptions.push(vscode.commands.registerCommand("dart-flutter-utils.dartNewEnum", newDartEnum));
 }
 
 // this method is called when your extension is deactivated

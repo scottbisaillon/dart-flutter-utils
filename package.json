@@ -10,7 +10,8 @@
     "Other"
   ],
   "activationEvents": [
-    "onCommand:dart-flutter-utils.dartNewClass"
+    "onCommand:dart-flutter-utils.dartNewClass",
+    "onCommand:dart-flutter-utils.dartNewEnum"
   ],
   "main": "./dist/extension.js",
   "contributes": {
@@ -18,12 +19,21 @@
       {
         "command": "dart-flutter-utils.dartNewClass",
         "title": "Dart: New Class"
+      },
+      {
+        "command": "dart-flutter-utils.dartNewEnum",
+        "title": "Dart: New Enum"
       }
     ],
     "menus": {
       "explorer/context": [
         {
           "command": "dart-flutter-utils.dartNewClass",
+          "group": "dart-flutter-utilsGroup@1",
+          "when": "explorerResourceIsFolder"
+        },
+        {
+          "command": "dart-flutter-utils.dartNewEnum",
           "group": "dart-flutter-utilsGroup@1",
           "when": "explorerResourceIsFolder"
         }
