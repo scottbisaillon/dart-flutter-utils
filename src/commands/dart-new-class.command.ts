@@ -1,11 +1,12 @@
-import * as _ from "lodash";
-import { InputBoxOptions, OpenDialogOptions, Uri, window } from "vscode";
-import { existsSync, lstatSync, writeFile } from "fs";
 import * as changeCase from "change-case";
+import { lstatSync, writeFile } from "fs";
+import * as _ from "lodash";
+import { Uri, window } from "vscode";
+import { promptForInput, promptForTargetDirectory } from "../helpers";
 import { getNewDartClassTemplate } from "../templates";
 
 export const newDartClass = async (uri: Uri) => {
-    const className = await promptForClassName();
+    const className = await promptForInput("Class Name", "DartClass");
     if (_.isNil(className) || className.trim() === "") {
         window.showErrorMessage("The class name must not be empty");
         return;
@@ -25,30 +26,7 @@ export const newDartClass = async (uri: Uri) => {
     const newDartClassFilePath = `${targetDirectory}/${changeCase.snakeCase(className)}.dart`;
     writeFile(newDartClassFilePath, getNewDartClassTemplate(className), "utf-8", (error) => {
         if (error) {
-            // TODO: Show error
+            window.showErrorMessage(`Failed to right file: ${error}`);
         }
     });
 };
-
-function promptForClassName(): Thenable<string | undefined> {
-    const featureNameProperties: InputBoxOptions = {
-        prompt: "Class Name",
-        placeHolder: "DartClass"
-    };
-    return window.showInputBox(featureNameProperties);
-}
-
-async function promptForTargetDirectory(): Promise<string | undefined> {
-    const options: OpenDialogOptions = {
-        canSelectMany: false,
-        openLabel: "Select a folder to create the class in",
-        canSelectFolders: true,
-    };
-
-    return window.showOpenDialog(options).then((uri) => {
-        if (_.isNil(uri) || _.isEmpty(uri)) {
-            return undefined;
-        }
-        return uri[0].fsPath;
-    });
-}
