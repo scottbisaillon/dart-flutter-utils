@@ -3,12 +3,12 @@ import { lstatSync, writeFile } from "fs";
 import * as _ from "lodash";
 import { Uri, window } from "vscode";
 import { promptForInput, promptForTargetDirectory } from "../helpers";
-import { getNewDartEnumTemplate } from "../templates";
+import { getNewFlutterNewStatelessWidgetTemplate } from "../templates";
 
-export const newDartEnum = async (uri: Uri) => {
-    const enumName = await promptForInput("Enum Name", "DartEnum");
-    if (_.isNil(enumName) || enumName.trim() === "") {
-        window.showErrorMessage("The enum name must not be empty");
+export const newFlutterStatelessWidget = async (uri: Uri) => {
+    const widgetName = await promptForInput("Widget Name", "StatelessWidget");
+    if (_.isNil(widgetName) || widgetName.trim() === "") {
+        window.showErrorMessage("The widget name must not be empty");
         return;
     }
 
@@ -23,8 +23,8 @@ export const newDartEnum = async (uri: Uri) => {
         targetDirectory = uri.fsPath;
     }
 
-    const newDartEnumFilePath = `${targetDirectory}/${changeCase.snakeCase(enumName)}.dart`;
-    writeFile(newDartEnumFilePath, getNewDartEnumTemplate(enumName), "utf-8", (error) => {
+    const newFlutterStatelessWidgetFilePath = `${targetDirectory}/${changeCase.snakeCase(widgetName)}.dart`;
+    writeFile(newFlutterStatelessWidgetFilePath, getNewFlutterNewStatelessWidgetTemplate(widgetName), "utf-8", (error) => {
         if (error) {
             window.showErrorMessage(`Failed to right file: ${error}`);
         }
