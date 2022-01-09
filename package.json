@@ -10,8 +10,7 @@
     "Other"
   ],
   "activationEvents": [
-    "onCommand:dart-flutter-utils.dartNewClass",
-    "onCommand:dart-flutter-utils.dartNewEnum"
+    "workspaceContains:**/pubspec.yaml"
   ],
   "main": "./dist/extension.js",
   "contributes": {
@@ -38,20 +37,22 @@
         {
           "command": "dart-flutter-utils.dartNewClass",
           "group": "dart-flutter-utilsGroup@1",
-          "when": "explorerResourceIsFolder"
+          "when": "explorerResourceIsFolder && ext.isDartProject"
         },
         {
           "command": "dart-flutter-utils.dartNewEnum",
+          "group": "dart-flutter-utilsGroup@1",
+          "when": "explorerResourceIsFolder && ext.isDartProject"
         },
         {
           "command": "dart-flutter-utils.flutterNewStatelessWidget",
           "group": "dart-flutter-utilsGroup@1",
-          "when": "explorerResourceIsFolder"
+          "when": "explorerResourceIsFolder && ext.isDartProject"
         },
         {
           "command": "dart-flutter-utils.flutterNewStatefulWidget",
           "group": "dart-flutter-utilsGroup@1",
-          "when": "explorerResourceIsFolder"
+          "when": "explorerResourceIsFolder && ext.isDartProject"
         }
       ]
     }
