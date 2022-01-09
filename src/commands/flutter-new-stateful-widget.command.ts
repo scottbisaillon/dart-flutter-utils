@@ -3,10 +3,10 @@ import { lstatSync, writeFile } from "fs";
 import * as _ from "lodash";
 import { Uri, window } from "vscode";
 import { promptForInput, promptForTargetDirectory } from "../helpers";
-import { getNewFlutterStatelessWidgetTemplate } from "../templates";
+import { getNewFlutterStatefulWidgetTemplate } from "../templates";
 
-export const newFlutterStatelessWidget = async (uri: Uri) => {
-    const widgetName = await promptForInput("Widget Name", "StatelessWidget");
+export const newFlutterStatefulWidget = async (uri: Uri) => {
+    const widgetName = await promptForInput("Widget Name", "StatefullWidget");
     if (_.isNil(widgetName) || widgetName.trim() === "") {
         window.showErrorMessage("The widget name must not be empty");
         return;
@@ -24,7 +24,7 @@ export const newFlutterStatelessWidget = async (uri: Uri) => {
     }
 
     const newFlutterStatelessWidgetFilePath = `${targetDirectory}/${changeCase.snakeCase(widgetName)}.dart`;
-    writeFile(newFlutterStatelessWidgetFilePath, getNewFlutterStatelessWidgetTemplate(widgetName), "utf-8", (error) => {
+    writeFile(newFlutterStatelessWidgetFilePath, getNewFlutterStatefulWidgetTemplate(widgetName), "utf-8", (error) => {
         if (error) {
             window.showErrorMessage(`Failed to right file: ${error}`);
         }

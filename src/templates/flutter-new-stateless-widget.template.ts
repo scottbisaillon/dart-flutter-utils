@@ -1,6 +1,6 @@
 import * as changeCase from "change-case";
 
-export function getNewFlutterNewStatelessWidgetTemplate(widgetName: string): string {
+export function getNewFlutterStatelessWidgetTemplate(widgetName: string): string {
     const pascalCaseWidgetName = changeCase.pascalCase(widgetName);
     return `import 'package:flutter/material.dart';
 

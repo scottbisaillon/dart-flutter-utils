@@ -23,6 +23,14 @@
       {
         "command": "dart-flutter-utils.dartNewEnum",
         "title": "Dart: New Enum"
+      },
+      {
+        "command": "dart-flutter-utils.flutterNewStatelessWidget",
+        "title": "Flutter: New Stateless Widget"
+      },
+      {
+        "command": "dart-flutter-utils.flutterNewStatefulWidget",
+        "title": "Flutter: New Stateful Widget"
       }
     ],
     "menus": {
@@ -34,6 +42,14 @@
         },
         {
           "command": "dart-flutter-utils.dartNewEnum",
+        },
+        {
+          "command": "dart-flutter-utils.flutterNewStatelessWidget",
+          "group": "dart-flutter-utilsGroup@1",
+          "when": "explorerResourceIsFolder"
+        },
+        {
+          "command": "dart-flutter-utils.flutterNewStatefulWidget",
           "group": "dart-flutter-utilsGroup@1",
           "when": "explorerResourceIsFolder"
         }
