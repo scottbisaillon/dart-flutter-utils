@@ -3,13 +3,20 @@
   "displayName": "Dart/Flutter Utils",
   "publisher": "ScottBisaillon",
   "description": "Explorer menu items fors conveniently creating Dart/Flutter classes and widgets.",
-  "repository": "https://github.com/scottbisaillon/dart-flutter-utils",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/scottbisaillon/dart-flutter-utils"
+  },
+  "keywords": [
+    "dart",
+    "flutter"
+  ],
   "version": "0.0.2",
   "engines": {
     "vscode": "^1.63.0"
   },
   "categories": [
-    "Other"
+    "Programming Languages"
   ],
   "activationEvents": [
     "workspaceContains:**/pubspec.yaml"
