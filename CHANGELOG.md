@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.3](https://github.com/scottbisaillon/dart-flutter-utils/compare/v0.0.2...v0.0.3) (2022-01-09)
+
+
+### Bug Fixes
+
+* update repository field in package.json ([32439b1](https://github.com/scottbisaillon/dart-flutter-utils/commit/32439b17ec274c6ec87dd89485d6a3e031b383c6))
+
 ### 0.0.2 (2022-01-09)
 
 
