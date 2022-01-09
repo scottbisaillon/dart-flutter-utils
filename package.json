@@ -3,6 +3,7 @@
   "displayName": "Dart/Flutter Utils",
   "publisher": "ScottBisaillon",
   "description": "Explorer menu items fors conveniently creating Dart/Flutter classes and widgets.",
+  "repository": "https://github.com/scottbisaillon/dart-flutter-utils",
   "version": "0.0.2",
   "engines": {
     "vscode": "^1.63.0"
