@@ -4,6 +4,8 @@ This extensions provides a few context menu entries for creating new Dart/Flutte
 
 ## Features
 
+**Note:** These menu items will be activated for projects that contain a `pubspec.yaml` file.
+
 **Note:** Names entered for the following should be in `PascalCase` which will be converted to `snake_case` when naming the file.
 
 | Menu Item                     | Description                                     |
