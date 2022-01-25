@@ -17,6 +17,10 @@ This extensions provides a few context menu entries for creating new Dart/Flutte
 
 ## Release Notes
 
-### 1.0.0
+### 0.0.2
 
 Initial release.
+
+### 0.0.3
+
+Bug fixes.
